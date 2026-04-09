@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muribro Cars Repair Garage – Abu Dhabi</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      background: linear-gradient(135deg, #0a0a0a 55%, #1a0000 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 0 40px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 80px,
+        rgba(215,35,35,0.03) 80px,
+        rgba(215,35,35,0.03) 81px
+      );
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--red), var(--gold), var(--red), transparent);
+    }
+
+    .hero-text { position: relative; z-index: 2; padding: 60px 0; }
+
+    .hero-eyebrow {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 30px; height: 2px;
+      background: var(--gold);
+    }
+
+    .hero-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(44px, 6vw, 80px);
+      line-height: 0.92;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+    .hero-title .highlight { color: var(--red); display: block; }
+
+    .hero-tagline {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      font-size: clamp(18px, 2.5vw, 26px);
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+      border-left: 4px solid var(--red);
+      padding-left: 16px;
+    }
+
+    .hero-desc {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .hero-desc strong { color: var(--light); font-weight: 600; }
+
+    .hero-badges {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .badge {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 2px;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .badge.red { border-color: var(--red); color: var(--red); }
+
+    .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* ─── HERO IMAGE ─── */
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-logo-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-logo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(215,35,35,0.15) 0%, transparent 70%);
+      animation: pulse 3s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+    .hero-logo {
+      width: clamp(260px, 35vw, 440px);
+      height: clamp(260px, 35vw, 440px);
+      object-fit: contain;
+      border-radius: 50%;
+      border: 4px solid var(--red);
+      box-shadow: 0 0 60px rgba(215,35,35,0.3), 0 0 120px rgba(215,35,35,0.1);
+      position: relative;
+    }
+    .hero-logo-placeholder {
+      width: clamp(260px, 35vw, 440px);
+      height: clamp(260px, 35vw, 440px);
+      border-radius: 50%;
+      border: 4px solid var(--red);
+      background: var(--panel);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 60px rgba(215,35,35,0.3);
+      gap: 10px;
+    }
+    .hero-logo-placeholder span:first-child { font-size: 64px; }
+    .hero-logo-placeholder span:last-child {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 0 30px;
+    }
+
+    /* ─── SERVICES STRIP ─── */
+    .strip {
+      background: var(--red);
+      padding: 16px 40px;
+      display: flex;
+      gap: 40px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .strip::-webkit-scrollbar { display: none; }
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: white;
+    }
+    .strip-dot { width: 6px; height: 6px; background: rgba(255,255,255,0.5); border-radius: 50%; }
+
+    /* ─── SERVICE CARDS ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+    .service-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 28px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transition: transform 0.25s;
+    }
+    .service-card:hover {
+      border-color: var(--red);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon { font-size: 36px; margin-bottom: 12px; display: block; }
+    .service-name {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--light);
+    }
+
+    /* ─── PARTNER SECTION ─── */
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .partner-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 36px 24px;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .partner-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+    }
+    .partner-logo { font-size: 40px; margin-bottom: 14px; display: block; }
+    .partner-name {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 20px;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+    .partner-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ─── WHY US ─── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .why-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      padding: 28px 24px;
+    }
+    .why-icon { font-size: 30px; margin-bottom: 12px; }
+    .why-title {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .why-desc { color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; padding: 30px 20px; min-height: auto; }
+      .hero-image { order: -1; margin-bottom: 20px; }
+      .strip { padding: 14px 20px; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="tel:+971XXXXXXXX1" class="tel-btn">
+    <img src="icons/phone.png" alt="" onerror="this.style.display='none'" style="height:15px;vertical-align:middle;margin-right:5px;"/>
+    +971 XX XXX XXXX
+  </a>
+  <a href="tel:+971XXXXXXXX2" class="tel-btn">
+    <img src="icons/phone.png" alt="" onerror="this.style.display='none'" style="height:15px;vertical-align:middle;margin-right:5px;"/>
+    +971 XX XXX XXXX
+  </a>
+  <a href="socials.html" class="fb-btn">
+    <img src="icons/facebook.png" alt="" onerror="this.style.display='none'" style="height:15px;vertical-align:middle;margin-right:5px;"/>
+    Socials
+  </a>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <!-- Replace logo.png with your actual logo file -->
+    <img src="logo.png" alt="Muribro Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="nav-logo-placeholder" style="display:none">LOGO</div>
+    <div class="nav-brand">
+      <span>Muribro Cars</span>
+      <span>Repair Garage · Abu Dhabi</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="socials.html">Socials</a></li>
+    <li><a href="location.html">Location</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Filipino Owned · Abu Dhabi, UAE</div>
+    <h1 class="hero-title">
+      Welcome To
+      <span class="highlight">Muribro Cars</span>
+      Repair Garage
+    </h1>
+    <p class="hero-tagline">'We put Care into Car Repair'</p>
+    <p class="hero-desc">
+      <strong>Muribro Cars Repair Garage</strong> is a Filipino owned garage in UAE, Abu Dhabi.<br/><br/>
+      We specialize in <strong>Japanese, Korean and American</strong> car models offering a variety of services.
+    </p>
+    <div class="hero-badges">
+      <div class="badge red">🇯🇵 Japanese Models</div>
+      <div class="badge red">🇰🇷 Korean Models</div>
+      <div class="badge red">🇺🇸 American Models</div>
+    </div>
+    <div class="hero-cta">
+      <a href="services.html" class="btn btn-red">Our Services</a>
+      <a href="contact.html" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <div class="hero-logo-wrap">
+      <!-- Replace logo.png with your actual logo file -->
+      <img src="logo.png" alt="Muribro Cars Logo" class="hero-logo"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="hero-logo-placeholder" style="display:none">
+        <span>🔧</span>
+        <span>Add your logo.png here</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK STRIP -->
+<div class="strip">
+  <div class="strip-item"><span class="strip-dot"></span>Oil & Filter Change</div>
+  <div class="strip-item"><span class="strip-dot"></span>Car AC Service</div>
+  <div class="strip-item"><span class="strip-dot"></span>Radiator Flushing</div>
+  <div class="strip-item"><span class="strip-dot"></span>Window Tinting</div>
+  <div class="strip-item"><span class="strip-dot"></span>Car Polish & Detail</div>
+  <div class="strip-item"><span class="strip-dot"></span>Full Check Up</div>
+  <div class="strip-item"><span class="strip-dot"></span>Wheel Balancing</div>
+  <div class="strip-item"><span class="strip-dot"></span>Smart Paint</div>
+</div>
+
+<!-- SERVICES -->
+<div class="section">
+  <h2 class="section-title">Our <span>Services</span></h2>
+  <div class="red-line"></div>
+  <p class="section-sub">Click any service to learn more about what we offer.</p>
+
+  <div class="services-grid">
+    <a href="services.html#radiator" class="service-card">
+      <span class="service-icon">💧</span>
+      <div class="service-name">Radiator Flushing</div>
+    </a>
+    <a href="services.html#ac" class="service-card">
+      <span class="service-icon">❄️</span>
+      <div class="service-name">Car AC Service</div>
+    </a>
+    <a href="services.html#injector" class="service-card">
+      <span class="service-icon">⛽</span>
+      <div class="service-name">Fuel Injector Cleaning</div>
+    </a>
+    <a href="services.html#tinting" class="service-card">
+      <span class="service-icon">🪟</span>
+      <div class="service-name">Car Window Tinting</div>
+    </a>
+    <a href="services.html#polish" class="service-card">
+      <span class="service-icon">✨</span>
+      <div class="service-name">Car Polish & Detail</div>
+    </a>
+    <a href="services.html#painting" class="service-card">
+      <span class="service-icon">🎨</span>
+      <div class="service-name">Painting / SMART Paint</div>
+    </a>
+    <a href="services.html#oil" class="service-card">
+      <span class="service-icon">🛢️</span>
+      <div class="service-name">Oil & Filter Change</div>
+    </a>
+    <a href="services.html#checkup" class="service-card">
+      <span class="service-icon">🔍</span>
+      <div class="service-name">Full Check Up</div>
+    </a>
+    <a href="services.html#wash" class="service-card">
+      <span class="service-icon">🚿</span>
+      <div class="service-name">Quick Car Wash</div>
+    </a>
+    <a href="services.html#wheel" class="service-card">
+      <span class="service-icon">⚙️</span>
+      <div class="service-name">Wheel Balancing</div>
+    </a>
+    <a href="services.html#bodykit" class="service-card">
+      <span class="service-icon">🚗</span>
+      <div class="service-name">Body Kit Accessories & Installation</div>
+    </a>
+  </div>
+</div>
+
+<!-- PARTNERSHIPS -->
+<div style="background: var(--dark); padding: 2px 0;">
+<div class="section">
+  <h2 class="section-title">Our Partnerships &amp; <span>Affiliations</span></h2>
+  <div class="red-line"></div>
+  <p class="section-sub">Proud to work alongside trusted names in the automotive community.</p>
+
+  <div class="partners-grid">
+    <div class="partner-card">
+      <div style="height:56px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <img src="partners/boy-ungoy.png" alt="Boy Ungoy" style="max-height:56px;max-width:140px;object-fit:contain;"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span style="display:none;font-size:36px;align-items:center;justify-content:center;">🤝</span>
+      </div>
+      <div class="partner-name">Boy Ungoy</div>
+      <div class="partner-sub">Official Partner</div>
+    </div>
+    <div class="partner-card">
+      <div style="height:56px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <img src="partners/team-mitsubishi.png" alt="Team Mitsubishi Lancer" style="max-height:56px;max-width:140px;object-fit:contain;"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span style="display:none;font-size:36px;align-items:center;justify-content:center;">🚗</span>
+      </div>
+      <div class="partner-name">Team Mitsubishi Lancer</div>
+      <div class="partner-sub">Abu Dhabi</div>
+    </div>
+    <div class="partner-card">
+      <div style="height:56px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <img src="partners/aspco.png" alt="ASPCO" style="max-height:56px;max-width:140px;object-fit:contain;"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span style="display:none;font-size:36px;align-items:center;justify-content:center;">🏢</span>
+      </div>
+      <div class="partner-name">ASPCO</div>
+      <div class="partner-sub">Affiliate</div>
+    </div>
+    <div class="partner-card">
+      <div style="height:56px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <img src="partners/x1r.png" alt="X-1R" style="max-height:56px;max-width:140px;object-fit:contain;"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <span style="display:none;font-size:36px;align-items:center;justify-content:center;">🔬</span>
+      </div>
+      <div class="partner-name">X-1R</div>
+      <div class="partner-sub">Product Partner</div>
+    </div>
+    <!-- ── YUASA ── Upload partners/yuasa.png to your repo -->
+    <div class="partner-card">
+      <div style="height:56px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;">
+        <img src="partners/yuasa.png" alt="Yuasa Car Battery" style="max-height:56px;max-width:140px;object-fit:contain;"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+        <!-- Fallback text if image not yet uploaded -->
+        <div style="display:none;background:var(--dark);border:2px dashed var(--border);padding:6px 14px;border-radius:4px;">
+          <span style="font-family:'Bebas Neue',cursive;font-size:22px;letter-spacing:0.1em;color:var(--red);">YUASA</span>
+        </div>
+      </div>
+      <div class="partner-name">Yuasa</div>
+      <div class="partner-sub">Car Battery Partner</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- WHY US -->
+<div class="section">
+  <h2 class="section-title">Why Choose <span>Muribro</span></h2>
+  <div class="red-line"></div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🇵🇭</div>
+      <div class="why-title">Filipino Craftsmanship</div>
+      <div class="why-desc">Proudly Filipino-owned, bringing dedication, honesty, and hard work to every repair.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🔧</div>
+      <div class="why-title">Specialist Know-How</div>
+      <div class="why-desc">Expert mechanics trained on Japanese, Korean, and American vehicle platforms.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💰</div>
+      <div class="why-title">Fair & Transparent Pricing</div>
+      <div class="why-desc">No hidden fees. We explain every job before we start and respect your budget.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">📍</div>
+      <div class="why-title">Conveniently Located</div>
+      <div class="why-desc">Based in Abu Dhabi, UAE — easy to reach, with a welcoming and professional environment.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <h4>Muribro Cars Repair Garage</h4>
+    <p class="tagline-footer">'We put Care into Car Repair'</p>
+    <p style="margin-top:12px">Filipino Owned · Abu Dhabi, UAE</p>
+  </div>
+  <div>
+    <h4>Quick Links</h4>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="location.html">Location</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div>
+    <h4>Get in Touch</h4>
+    <a href="tel:+971XXXXXXXX1">Call: +971 XX XXX XXXX</a>
+    <a href="tel:+971XXXXXXXX2">Call: +971 XX XXX XXXX</a>
+    <a href="socials.html">Our Socials</a>
+    <a href="location.html">Abu Dhabi, UAE</a>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Muribro Cars Repair Garage · Abu Dhabi, UAE · All Rights Reserved
+  </div>
+</footer>
+
+</body>
+</html>

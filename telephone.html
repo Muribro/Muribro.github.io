@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Call Us – Muribro Cars Repair Garage</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .tel-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      text-align: center;
+      padding: 40px;
+    }
+    .tel-icon-wrap {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 40px rgba(215,35,35,0.4);
+      animation: ringpulse 2s ease-in-out infinite;
+    }
+    @keyframes ringpulse {
+      0%,100% { box-shadow: 0 0 40px rgba(215,35,35,0.4); }
+      50% { box-shadow: 0 0 70px rgba(215,35,35,0.7); }
+    }
+    .tel-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 48px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .tel-sub {
+      color: var(--muted);
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+    .tel-number {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(36px, 8vw, 72px);
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 30px;
+      background: var(--panel);
+      border: 2px solid var(--border);
+      border-left: 6px solid var(--red);
+      padding: 20px 40px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .tel-number:hover { border-color: var(--gold); }
+
+    .tel-hours {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--red);
+      padding: 30px 40px;
+      max-width: 400px;
+      width: 100%;
+      margin: 30px auto 0;
+      text-align: left;
+    }
+    .tel-hours h4 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .tel-hours table { width: 100%; }
+    .tel-hours td {
+      padding: 8px 0;
+      font-size: 14px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .tel-hours td:first-child {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      color: var(--light);
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 0.06em;
+    }
+    .tel-hours tr:last-child td { border-bottom: none; }
+
+    .also-reach {
+      margin-top: 30px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="telephone.html" class="tel-btn"><span class="topbar-icon">📞</span> +971 XX XXX XXXX</a>
+  <a href="https://facebook.com" target="_blank" class="fb-btn"><span class="topbar-icon">𝗳</span> Facebook</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Muribro Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="nav-logo-placeholder" style="display:none">LOGO</div>
+    <div class="nav-brand">
+      <span>Muribro Cars</span>
+      <span>Repair Garage · Abu Dhabi</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="location.html">Location</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="tel-center">
+  <div class="tel-icon-wrap">📞</div>
+  <h1 class="tel-title">Call Us Now</h1>
+  <p class="tel-sub">Muribro Cars Repair Garage · Abu Dhabi, UAE</p>
+
+  <!-- UPDATE THIS NUMBER WITH YOUR REAL PHONE NUMBER -->
+  <a href="tel:+971XXXXXXXX" class="tel-number">+971 XX XXX XXXX</a>
+
+  <p style="color:var(--muted);font-size:14px">Tap the number above to call us directly from your phone.</p>
+
+  <div class="tel-hours">
+    <h4>🕐 When to Call</h4>
+    <table>
+      <tr><td>Monday – Friday</td><td>8:00 AM – 6:00 PM</td></tr>
+      <tr><td>Saturday</td><td>8:00 AM – 4:00 PM</td></tr>
+      <tr><td>Sunday</td><td>By Appointment</td></tr>
+    </table>
+  </div>
+
+  <div class="also-reach">
+    <a href="https://facebook.com" target="_blank" class="btn btn-outline">𝗳 Message on Facebook</a>
+    <a href="contact.html" class="btn btn-red">📝 Send us a Message</a>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <h4>Muribro Cars Repair Garage</h4>
+    <p class="tagline-footer">'We put Care into Car Repair'</p>
+    <p style="margin-top:12px">Filipino Owned · Abu Dhabi, UAE</p>
+  </div>
+  <div>
+    <h4>Quick Links</h4>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="location.html">Location</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div>
+    <h4>Get in Touch</h4>
+    <a href="telephone.html">📞 Call Us</a>
+    <a href="https://facebook.com" target="_blank">𝗳 Facebook</a>
+    <a href="location.html">📍 Abu Dhabi, UAE</a>
+  </div>
+  <div class="footer-bottom">© 2025 Muribro Cars Repair Garage · Abu Dhabi, UAE · All Rights Reserved</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Location – Muribro Cars Repair Garage</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .location-info h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 28px 0 10px;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      padding: 18px 20px;
+      margin-bottom: 12px;
+    }
+    .info-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .info-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .info-value {
+      font-size: 15px;
+      color: var(--light);
+      font-weight: 500;
+    }
+    .info-value a { color: var(--gold); text-decoration: none; }
+    .info-value a:hover { text-decoration: underline; }
+
+    .hours-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    .hours-table td {
+      padding: 8px 12px;
+      font-size: 14px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .hours-table td:first-child {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--light);
+      width: 50%;
+    }
+    .hours-table tr:last-child td { border-bottom: none; }
+
+    .map-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--red);
+      overflow: hidden;
+    }
+    .map-box iframe {
+      width: 100%;
+      height: 420px;
+      display: block;
+      filter: grayscale(30%) contrast(1.1);
+    }
+    .map-placeholder {
+      width: 100%;
+      height: 420px;
+      background: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: var(--muted);
+    }
+    .map-placeholder span:first-child { font-size: 60px; }
+    .map-placeholder p {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .map-caption {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .map-caption p {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 768px) {
+      .location-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="telephone.html" class="tel-btn"><span class="topbar-icon">📞</span> +971 XX XXX XXXX</a>
+  <a href="https://facebook.com" target="_blank" class="fb-btn"><span class="topbar-icon">𝗳</span> Facebook</a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Muribro Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="nav-logo-placeholder" style="display:none">LOGO</div>
+    <div class="nav-brand">
+      <span>Muribro Cars</span>
+      <span>Repair Garage · Abu Dhabi</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="location.html" class="active">Location</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Find <span style="color:var(--red)">Us</span></h1>
+  <p>We're conveniently located in Abu Dhabi, UAE</p>
+</div>
+
+<div class="section">
+  <div class="location-grid">
+    <div class="location-info">
+      <h2 class="section-title">Our <span>Location</span></h2>
+      <div class="red-line"></div>
+
+      <div class="info-row">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Address</div>
+          <div class="info-value">Abu Dhabi, UAE<br/><span style="color:var(--muted);font-size:13px">(Update with full street address)</span></div>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <a href="telephone.html" style="display:contents;text-decoration:none">
+          <div class="info-icon">📞</div>
+          <div>
+            <div class="info-label">Phone</div>
+            <div class="info-value"><a href="telephone.html">+971 XX XXX XXXX</a></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="info-row">
+        <div class="info-icon">𝗳</div>
+        <div>
+          <div class="info-label">Facebook</div>
+          <div class="info-value"><a href="https://facebook.com" target="_blank">Find us on Facebook</a></div>
+        </div>
+      </div>
+
+      <h3>Opening Hours</h3>
+      <div style="background:var(--panel);border:1px solid var(--border);">
+        <table class="hours-table">
+          <tr><td>Monday – Friday</td><td>8:00 AM – 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>8:00 AM – 4:00 PM</td></tr>
+          <tr><td>Sunday</td><td>By Appointment</td></tr>
+          <tr><td style="color:var(--gold)">Public Holidays</td><td style="color:var(--muted)">Closed</td></tr>
+        </table>
+      </div>
+
+      <div style="margin-top:24px">
+        <a href="contact.html" class="btn btn-red">Book an Appointment</a>
+      </div>
+    </div>
+
+    <div class="map-box">
+      <!-- Replace with actual Google Maps embed for your address -->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462557.5011485469!2d54.29748!3d24.46667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e48dfb1ab22c3%3A0x3d3f5c7e!2sAbu%20Dhabi%2C%20UAE!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Muribro Cars Location"
+      ></iframe>
+      <div class="map-caption">
+        <p>📍 Abu Dhabi, UAE</p>
+        <a href="https://maps.google.com/?q=Abu+Dhabi+UAE" target="_blank" class="btn btn-red" style="padding:8px 16px;font-size:12px">Open in Maps</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <h4>Muribro Cars Repair Garage</h4>
+    <p class="tagline-footer">'We put Care into Car Repair'</p>
+    <p style="margin-top:12px">Filipino Owned · Abu Dhabi, UAE</p>
+  </div>
+  <div>
+    <h4>Quick Links</h4>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="location.html">Location</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div>
+    <h4>Get in Touch</h4>
+    <a href="telephone.html">📞 Call Us</a>
+    <a href="https://facebook.com" target="_blank">𝗳 Facebook</a>
+    <a href="location.html">📍 Abu Dhabi, UAE</a>
+  </div>
+  <div class="footer-bottom">© 2025 Muribro Cars Repair Garage · Abu Dhabi, UAE · All Rights Reserved</div>
+</footer>
+</body>
+</html>
