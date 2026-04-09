@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Muribro Cars Repair Garage</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    /* ── Left: channel cards ── */
+    .contact-channels h3 {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 28px 0 12px;
+    }
+    .channel-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--red);
+      padding: 20px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .channel-card:hover {
+      border-color: var(--gold);
+      transform: translateX(4px);
+    }
+    .ch-icon-wrap {
+      width: 44px; height: 44px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ch-icon-wrap img {
+      width: 36px; height: 36px; object-fit: contain;
+    }
+    .ch-icon-wrap .ch-fallback {
+      display: none;
+      width: 36px; height: 36px;
+      align-items: center; justify-content: center;
+      font-size: 28px;
+    }
+    .ch-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .ch-value { font-size: 15px; color: var(--light); font-weight: 500; margin-top: 2px; }
+
+    /* ── Right: WhatsApp / Call CTA box ── */
+    .contact-action-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--red);
+      padding: 44px 40px;
+    }
+    .contact-action-box h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 30px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .contact-action-box p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .action-section-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .action-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .action-btn {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 24px;
+      margin-bottom: 14px;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+      border: 1px solid transparent;
+    }
+    .action-btn:hover { transform: translateY(-2px); opacity: 0.92; }
+
+    .action-btn.whatsapp { background: #25D366; color: white; }
+    .action-btn.call     { background: var(--red); color: white; }
+    .action-btn.call.alt { background: var(--dark); border-color: var(--border); }
+    .action-btn.call.alt:hover { border-color: var(--red); }
+
+    .action-btn-icon {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .action-btn-icon img { width: 28px; height: 28px; object-fit: contain; }
+    .action-btn-icon .btn-icon-fallback {
+      display: none;
+      align-items: center; justify-content: center;
+      font-size: 26px;
+    }
+
+    .action-btn-text { flex: 1; }
+    .action-btn-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700; font-size: 11px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      opacity: 0.75; margin-bottom: 2px;
+    }
+    .action-btn-value { font-size: 17px; font-weight: 600; }
+
+    .action-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-action-box { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="tel:+971XXXXXXXX1" class="tel-btn">
+    <img src="icons/phone.png" alt="" onerror="this.style.display='none'" style="height:15px;vertical-align:middle;margin-right:5px;"/>
+    +971 XX XXX XXXX
+  </a>
+  <a href="tel:+971XXXXXXXX2" class="tel-btn">
+    <img src="icons/phone.png" alt="" onerror="this.style.display='none'" style="height:15px;vertical-align:middle;margin-right:5px;"/>
+    +971 XX XXX XXXX
+  </a>
+  <a href="socials.html" class="fb-btn">
+    <img src="icons/facebook.png" alt="" onerror="this.style.display='none'" style="height:15px;vertical-align:middle;margin-right:5px;"/>
+    Socials
+  </a>
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Muribro Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <div class="nav-logo-placeholder" style="display:none">LOGO</div>
+    <div class="nav-brand">
+      <span>Muribro Cars</span>
+      <span>Repair Garage · Abu Dhabi</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="socials.html">Socials</a></li>
+    <li><a href="location.html">Location</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <h1>Contact <span style="color:var(--red)">Us</span></h1>
+  <p>Send a message to our WhatsApp or call us — we're here to help</p>
+</div>
+
+<div class="section">
+  <div class="contact-grid">
+
+    <!-- LEFT: info cards -->
+    <div class="contact-channels">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <div class="red-line"></div>
+      <p style="color:var(--muted);font-size:15px;margin-bottom:30px">Have a question about your car or want to book a service? Send us a WhatsApp or give us a call — we'll get back to you right away.</p>
+
+      <a href="https://wa.me/971XXXXXXXX1" target="_blank" rel="noopener" class="channel-card">
+        <div class="ch-icon-wrap">
+          <img src="icons/whatsapp.png" alt="WhatsApp"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="ch-fallback">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="ch-label">WhatsApp — Number 1</div>
+          <div class="ch-value">+971 XX XXX XXXX</div>
+        </div>
+      </a>
+
+      <a href="https://wa.me/971XXXXXXXX2" target="_blank" rel="noopener" class="channel-card">
+        <div class="ch-icon-wrap">
+          <img src="icons/whatsapp.png" alt="WhatsApp"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="ch-fallback">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="ch-label">WhatsApp — Number 2</div>
+          <div class="ch-value">+971 XX XXX XXXX</div>
+        </div>
+      </a>
+
+      <a href="https://facebook.com/MuribroCarsRepairGarage" target="_blank" rel="noopener" class="channel-card">
+        <div class="ch-icon-wrap">
+          <img src="icons/facebook.png" alt="Facebook"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="ch-fallback">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.413c0-3.025 1.791-4.697 4.533-4.697 1.313 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.883v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="ch-label">Facebook</div>
+          <div class="ch-value">Muribro Cars Repair Garage</div>
+        </div>
+      </a>
+
+      <a href="location.html" class="channel-card">
+        <div class="ch-icon-wrap">
+          <img src="icons/location.png" alt="Location"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="ch-fallback" style="font-size:26px">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="ch-label">Visit Us</div>
+          <div class="ch-value">Abu Dhabi, UAE</div>
+        </div>
+      </a>
+
+      <h3>Opening Hours</h3>
+      <div style="background:var(--panel);border:1px solid var(--border);padding:20px;">
+        <p style="color:var(--light);font-size:14px;line-height:2">
+          Mon – Fri: <strong>8:00 AM – 6:00 PM</strong><br/>
+          Saturday: <strong>8:00 AM – 4:00 PM</strong><br/>
+          Sunday: <strong>By Appointment</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHT: WhatsApp / Call action box -->
+    <div class="contact-action-box">
+      <h3>Send a Message to Our WhatsApp's or Call Us</h3>
+      <p>Choose your preferred way to reach us. We respond quickly on WhatsApp or you can call us directly during opening hours.</p>
+
+      <div class="action-section-label">Message on WhatsApp</div>
+
+      <a href="https://wa.me/971XXXXXXXX1?text=Hello%20Muribro%2C%20I%20would%20like%20to%20book%20a%20service."
+         target="_blank" rel="noopener" class="action-btn whatsapp">
+        <div class="action-btn-icon">
+          <img src="icons/whatsapp.png" alt="WhatsApp"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="btn-icon-fallback">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+        </div>
+        <div class="action-btn-text">
+          <div class="action-btn-label">WhatsApp — Number 1</div>
+          <div class="action-btn-value">+971 XX XXX XXXX</div>
+        </div>
+      </a>
+
+      <a href="https://wa.me/971XXXXXXXX2?text=Hello%20Muribro%2C%20I%20would%20like%20to%20book%20a%20service."
+         target="_blank" rel="noopener" class="action-btn whatsapp">
+        <div class="action-btn-icon">
+          <img src="icons/whatsapp.png" alt="WhatsApp"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="btn-icon-fallback">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+        </div>
+        <div class="action-btn-text">
+          <div class="action-btn-label">WhatsApp — Number 2</div>
+          <div class="action-btn-value">+971 XX XXX XXXX</div>
+        </div>
+      </a>
+
+      <hr class="action-divider"/>
+
+      <div class="action-section-label">Call Us Directly</div>
+
+      <a href="tel:+971XXXXXXXX1" class="action-btn call">
+        <div class="action-btn-icon">
+          <img src="icons/phone-white.png" alt="Call"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="btn-icon-fallback">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+          </div>
+        </div>
+        <div class="action-btn-text">
+          <div class="action-btn-label">Number 1</div>
+          <div class="action-btn-value">+971 XX XXX XXXX</div>
+        </div>
+      </a>
+
+      <a href="tel:+971XXXXXXXX2" class="action-btn call alt">
+        <div class="action-btn-icon">
+          <img src="icons/phone.png" alt="Call"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="btn-icon-fallback">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--red)"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+          </div>
+        </div>
+        <div class="action-btn-text">
+          <div class="action-btn-label" style="color:var(--muted)">Number 2</div>
+          <div class="action-btn-value" style="color:var(--light)">+971 XX XXX XXXX</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <h4>Muribro Cars Repair Garage</h4>
+    <p class="tagline-footer">'We put Care into Car Repair'</p>
+    <p style="margin-top:12px">Filipino Owned · Abu Dhabi, UAE</p>
+  </div>
+  <div>
+    <h4>Quick Links</h4>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="location.html">Location</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div>
+    <h4>Get in Touch</h4>
+    <a href="tel:+971XXXXXXXX1">Call: +971 XX XXX XXXX</a>
+    <a href="tel:+971XXXXXXXX2">Call: +971 XX XXX XXXX</a>
+    <a href="socials.html">Our Socials</a>
+  </div>
+  <div class="footer-bottom">© 2025 Muribro Cars Repair Garage · Abu Dhabi, UAE · All Rights Reserved</div>
+</footer>
+</body>
+</html>
